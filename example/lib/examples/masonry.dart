@@ -1,12 +1,10 @@
-import 'package:examples/common.dart';
+import 'package:example/common.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class MasonryPage extends StatelessWidget {
-  const MasonryPage({
-    Key? key,
-  }) : super(key: key);
+  const MasonryPage({super.key});
 
   @override
   Widget build(BuildContext context) {

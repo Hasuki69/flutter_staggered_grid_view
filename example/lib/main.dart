@@ -1,10 +1,10 @@
-import 'package:examples/common.dart';
-import 'package:examples/pages/aligned.dart';
-import 'package:examples/pages/masonry.dart';
-import 'package:examples/pages/quilted.dart';
-import 'package:examples/pages/staggered.dart';
-import 'package:examples/pages/staired.dart';
-import 'package:examples/pages/woven.dart';
+import 'package:example/common.dart';
+import 'package:example/pages/aligned.dart';
+import 'package:example/pages/masonry.dart';
+import 'package:example/pages/quilted.dart';
+import 'package:example/pages/staggered.dart';
+import 'package:example/pages/staired.dart';
+import 'package:example/pages/woven.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +12,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +28,8 @@ class MyApp extends StatelessWidget {
 
 class HomePage extends StatelessWidget {
   const HomePage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -80,11 +80,11 @@ class HomePage extends StatelessWidget {
 
 class MenuEntry extends StatelessWidget {
   const MenuEntry({
-    Key? key,
+    super.key,
     required this.title,
     required this.imageName,
     required this.destination,
-  }) : super(key: key);
+  });
 
   final String title;
   final Widget destination;

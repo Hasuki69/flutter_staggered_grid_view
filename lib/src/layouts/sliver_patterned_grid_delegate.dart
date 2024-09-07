@@ -87,9 +87,8 @@ abstract class SliverPatternGridDelegate<T> extends SliverGridDelegate {
 
   @override
   _SliverPatternGridLayout getLayout(SliverConstraints constraints) {
-    final crossAxisCount = this.crossAxisCount ??
-        (constraints.crossAxisExtent / (maxCrossAxisExtent! + crossAxisSpacing))
-            .ceil();
+    final crossAxisCount =
+        this.crossAxisCount ?? (constraints.crossAxisExtent / (maxCrossAxisExtent! + crossAxisSpacing)).ceil();
     final geometries = getGeometries(constraints, crossAxisCount);
     return _SliverPatternGridLayout(
       mainAxisSpacing: mainAxisSpacing,
@@ -116,8 +115,7 @@ class _SliverPatternGridLayout extends SliverGridLayout {
     required this.crossAxisExtent,
     this.reverseCrossAxis = false,
   })  : tileCount = tiles.length,
-        patternMainAxisExtent =
-            bounds.last.trailingScrollOffset + mainAxisSpacing;
+        patternMainAxisExtent = bounds.last.trailingScrollOffset + mainAxisSpacing;
 
   final double mainAxisSpacing;
   final double crossAxisExtent;
@@ -133,8 +131,7 @@ class _SliverPatternGridLayout extends SliverGridLayout {
       return 0;
     }
 
-    final lastFilledPatternTrailingScrollOffset =
-        (childCount ~/ tileCount) * patternMainAxisExtent;
+    final lastFilledPatternTrailingScrollOffset = (childCount ~/ tileCount) * patternMainAxisExtent;
 
     if (childCount % tileCount == 0) {
       return lastFilledPatternTrailingScrollOffset - mainAxisSpacing;
@@ -144,10 +141,7 @@ class _SliverPatternGridLayout extends SliverGridLayout {
     // index, childCount - 1, is.
     // TODO(romain): Can be optimized.
     final maxIndex = (childCount - 1) % tileCount;
-    final maxRemainingScrollOffset = tiles
-        .take(maxIndex + 1)
-        .map((x) => x.trailingScrollOffset)
-        .reduce(math.max);
+    final maxRemainingScrollOffset = tiles.take(maxIndex + 1).map((x) => x.trailingScrollOffset).reduce(math.max);
     return lastFilledPatternTrailingScrollOffset + maxRemainingScrollOffset;
   }
 
@@ -160,9 +154,7 @@ class _SliverPatternGridLayout extends SliverGridLayout {
     if (reverseCrossAxis) {
       return SliverGridGeometry(
         scrollOffset: realRect.scrollOffset,
-        crossAxisOffset: crossAxisExtent -
-            realRect.crossAxisOffset -
-            realRect.crossAxisExtent,
+        crossAxisOffset: crossAxisExtent - realRect.crossAxisOffset - realRect.crossAxisExtent,
         mainAxisExtent: realRect.mainAxisExtent,
         crossAxisExtent: realRect.crossAxisExtent,
       );
@@ -202,8 +194,7 @@ class _SliverPatternGridLayout extends SliverGridLayout {
     SliverGridGeometry rect,
     double mainAxisOffset,
   ) {
-    return rect.scrollOffset <= mainAxisOffset &&
-        rect.trailingScrollOffset >= (mainAxisOffset - mainAxisSpacing);
+    return rect.scrollOffset <= mainAxisOffset && rect.trailingScrollOffset >= (mainAxisOffset - mainAxisSpacing);
   }
 
   SliverGridGeometry tileRectAt(int index) {

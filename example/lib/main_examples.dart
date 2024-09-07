@@ -1,10 +1,10 @@
-import 'package:examples/common.dart';
-import 'package:examples/examples/aligned.dart';
-import 'package:examples/examples/masonry.dart';
-import 'package:examples/examples/quilted.dart';
-import 'package:examples/examples/staggered.dart';
-import 'package:examples/examples/staired.dart';
-import 'package:examples/examples/woven.dart';
+import 'package:example/common.dart';
+import 'package:example/examples/aligned.dart';
+import 'package:example/examples/masonry.dart';
+import 'package:example/examples/quilted.dart';
+import 'package:example/examples/staggered.dart';
+import 'package:example/examples/staired.dart';
+import 'package:example/examples/woven.dart';
 import 'package:flutter/material.dart';
 
 void main() {
